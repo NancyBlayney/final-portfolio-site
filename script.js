@@ -2,6 +2,17 @@ $(document).ready(function(){
 
 	var mq = window.matchMedia('screen and (min-width : 0px) and (max-width: 640px)');
 	
+
+
+	function setClick(){
+		AboutClick = 0;
+	  HomeClick = 0;
+	  SkillsClick = 0;
+	  GithubClick = 0;
+	  ContactClick = 0;
+	  ProjectsClick = 0;
+	}
+
 	if (mq.matches) {
 
 		var AboutClick = 0;
@@ -17,13 +28,7 @@ $(document).ready(function(){
 		var githubWidth = '35%';
 		var contactWidth = '62%';
 		
-		function setClick(){
-			AboutClick = 0;
-		  HomeClick = 0;
-		  SkillsClick = 0;
-		  GithubClick = 0;
-		  ContactClick = 0;
-		}
+
 
 		function original (){
 			$('.about').fadeIn().animate({width: aboutWidth, height:'28vh'});
@@ -151,9 +156,45 @@ $(document).ready(function(){
 			}
 		});
 
+
+
+
+
+
+
+
+
+
+
 	} else {
 
+
+
+
+
+
+
+
+
+
+
+		// function originalTwo (){
+			// $('.about').fadeIn().animate({width: '50%', height:'36vh'});
+			// $('.projects').fadeIn().animate({width: '100%', height: '20vh'});
+			// $('.skills').fadeIn().animate({width: '33.3%', height: '36vh'});
+			// $('.home').fadeIn().animate({width: '50%', height: '36vh'});
+			// $('.contact').fadeIn().animate({width: '33.3%', height: '36vh'});
+			// $('.github').fadeIn().animate({width: '33.3%', height: '36vh'});
+		// };
+
+
+
+
 		var SkillsClick = 0;
+		var ProjectsClick = 0;
+		var AboutClick = 0;
+		var HomeClick = 0;
+		var ContactClick = 0;
 
 		$('.block').mouseover(function(){
 			$(this).css({'color':'black','font-size':'1.2em'});
@@ -165,16 +206,48 @@ $(document).ready(function(){
 
 		$('.skills').click(function() {
 			if (SkillsClick==0){
+				setClick();
 				SkillsClick=1;
+				// originalTwo();
 				$('.skills').animate({height:'80vh'});
 				$('.github, .contact').animate({width:'66.7%'});
 				$('.home, .about, .projects').animate({height: '10vh'});
 			}
 			else{
 				SkillsClick=0;
+				// originalTwo();
 				$('.github, .contact').animate({width:'33.3%'});
-				$('.home, .about, .skills').animate({height: '37vh'});
+				$('.home, .about, .skills').animate({height: '36vh'});
 				$('.projects').animate({height: '20vh'});
+			}
+		});
+
+		$('.projects').mouseover(function(){
+			$('#expand-projects').stop().animate({ "opacity": 1 });
+		}).mouseout(function(){
+			$('#expand-projects').stop().animate({ "opacity": 0 }, 1);
+		})
+
+		$('#expand-projects').click(function() {
+			if (ProjectsClick==0){
+				setClick();
+				ProjectsClick=1;
+				// originalTwo();
+				$('#expand-projects').html("<h1>X</h1>");
+				$('.projects').animate({height:'100%'});
+				$('.github, .contact, .skills').fadeOut();
+				$('.home, .about').animate({height: '10vh'});
+				$('.projects-content').fadeIn();
+			}
+			else{
+				ProjectsClick=0;
+				// originalTwo();
+				$('#expand-projects').animate({ "opacity": 0 }, 1);
+				$('.projects').delay(300).animate({height: '20vh'}, 300);
+				$('.github, .contact, .skills').fadeIn();
+				$('.home, .about, .skills').delay(300).animate({height: '36vh'}, 300);
+				$('.projects-content').fadeOut();
+				$('#expand-projects').html("<h3>Click me to expand!</h3>");
 			}
 		});
 

@@ -5,8 +5,11 @@ html, body {
     background-color: black;
 }
 
-h1 {
+.logo {
 	text-align: center;
+	padding: 0;
+	margin: 0;
+	line-height: 8vh;
 }
 
 .container {
@@ -62,9 +65,19 @@ h1 {
 }
 
 
-.block:hover {
+.home:hover, .about:hover, .skills:hover, .fa-github:hover, .contact:hover, #expand-projects {
 	cursor: pointer;
 }
+
+
+.projects-content {
+	display: none;
+}
+
+#expand-projects {
+	opacity: 0;
+}
+
 
 
 
@@ -144,16 +157,24 @@ h1 {
 		width: 62%;
 	}
  
+
 }
 
 
 
-/*@media (min-width: 641px) {
-	.block {
-		padding: 5%;
-		height: 300px;
-	}
-}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media (min-width: 641px) {
   .container {
@@ -161,7 +182,7 @@ h1 {
   }
 
 	.block {
-		height: 37vh;
+		height: 36vh;
 		float: left;
 	}
 
@@ -170,6 +191,11 @@ h1 {
 		padding-right: 10%;
 		padding-top: 2%;
 		padding-bottom: 0;
+	}
+
+	h3 {
+		text-align: right;
+		padding-right: 10%;
 	}
 
 	.wrapper {
@@ -215,6 +241,33 @@ h1 {
 		margin-top: 2vw;
 		margin-left:12vw;
 	}
+
+	.projects-content {
+		width: 90%;
+		margin: 0 auto;
+	}
+
+	.projects-content img {
+		width: 20vw;
+		margin: 2vw;
+	}
+
+	.projects-title {
+		width: 8vw;
+		float: right;
+	}
+
+	.projects-title:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+
+	#expand-projects {
+		float: right;
+	}
+
+
 
 }
 
