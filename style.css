@@ -5,13 +5,19 @@ html, body {
     background-color: black;
 }
 
+h1 {
+	text-align: center;
+}
+
 .container {
   position: relative;
   width: 100%;
+/*  max-width: 960px;*/
   margin: 0 auto;
   box-sizing: border-box; 
   background-color: black;
   color: white;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 .new{
@@ -63,11 +69,16 @@ html, body {
 
 @media only screen and (min-width : 0px) and (max-width: 640px) {
 	.block {
-		height: 33.3vh;
+		height: 28vh;
 		position: relative;
 		margin-top: 3%;
 	}
 
+	.row:after {
+	  content: "";
+	  display: table;
+	  clear: both; 
+	}
 	.container {
 		width: 100%;
 		height: 100%;
@@ -136,11 +147,46 @@ html, body {
 
 @media (min-width: 641px) {
 	.block {
-		height: 100vh;
+		height: 47vh;
+		width: 33%;
+		float: left;
 	}
-	h2 {
+
+	.block p{
+		padding: 10%;
+	}
+/*	h2 {
 		margin: 0;
+		text-align: center;
+		padding-bottom: 10%;
+	}*/
+
+/*	.home {
+		width: 33%;
+		float: left;
 	}
+	.about {
+		width: 33%;
+		float: left;
+	}
+	.projects {
+		width: 33%;
+		float: left;
+	}
+	.skills {
+		width: 33%;
+		float: left;
+	}
+	.github {
+		width: 33%;
+		float: left;
+	}
+	.contact {
+		width: 33%;
+		float: left;
+	}*/
+
+
 }
 
 
@@ -165,11 +211,7 @@ html, body {
   clear: both; 
 }
 
-.row:after {
-  content: "";
-  display: table;
-  clear: both; 
-}
+
 
 
 

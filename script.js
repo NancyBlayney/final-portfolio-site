@@ -26,12 +26,12 @@ $(document).ready(function(){
 		}
 
 		function original (){
-			$('.about').fadeIn().animate({width: aboutWidth, height:'33.3vh'});
-			$('.projects').fadeIn().animate({width: projectsWidth, height: '33.3vh'});
-			$('.skills').fadeIn().animate({width: skillsWidth, height: '33.3vh'});
-			$('.home').fadeIn().animate({width: homeWidth, height: '33.3vh'});
-			$('.contact').fadeIn().animate({width: contactWidth, height: '33.3vh'});
-			$('.github').fadeIn().animate({width: githubWidth, height: '33.3vh'});
+			$('.about').fadeIn().animate({width: aboutWidth, height:'28vh'});
+			$('.projects').fadeIn().animate({width: projectsWidth, height: '28vh'});
+			$('.skills').fadeIn().animate({width: skillsWidth, height: '28vh'});
+			$('.home').fadeIn().animate({width: homeWidth, height: '28vh'});
+			$('.contact').fadeIn().animate({width: contactWidth, height: '28vh'});
+			$('.github').fadeIn().animate({width: githubWidth, height: '28vh'});
 		};
 
 
@@ -43,7 +43,7 @@ $(document).ready(function(){
 				$('.about-content, .contact-content, .skills-content, .github-content').css('display', 'none');
 				$('.about').animate({width:'0'}, 300);
 				$('.about').fadeOut();
-				$('.home').animate({width:'100%', height:'80vh'}, 300);
+				$('.home').animate({width:'100%', height:'64vh'}, 300);
 				$('.projects, .skills, .contact, .github').animate({height:'10vh'}, 300);
 				$('.home-content').fadeIn();
 				$('.title').addClass('titleTwo');
@@ -65,7 +65,7 @@ $(document).ready(function(){
 				$('.contact-content, .home-content, .skills-content, .github-content').css('display', 'none');
 				$('.home').animate({width:'0'},300);			
 				$('.home').fadeOut();
-				$('.about').animate({width:'100%', height:'80vh'}, 300);
+				$('.about').animate({width:'100%', height:'64vh'}, 300);
 				$('.projects, .skills, .contact, .github').animate({height:'10vh'}, 300);
 				$('.about-content').fadeIn();
 				$('.title').addClass('titleTwo');
@@ -74,7 +74,7 @@ $(document).ready(function(){
 				AboutClick=0;
 				original();
 				$('.content').fadeOut();
-				$('.about').animate({width: aboutWidth, height:'33.3vh'}, 300);
+				$('.about').animate({width: aboutWidth, height:'28vh'}, 300);
 				$('.home').fadeIn();
 				$('.home').animate({width: homeWidth});
 				$('.title').removeClass('titleTwo');
@@ -89,7 +89,7 @@ $(document).ready(function(){
 				$('.about-content, .home-content, .contact-content, .github-content').css('display', 'none');
 				$('.projects').animate({width:'0'}, 300);
 				$('.projects').fadeOut();
-				$('.skills').animate({width:'100%', height:'80vh'}, 300)
+				$('.skills').animate({width:'100%', height:'64vh'}, 300)
 				$('.about, .home, .contact, .github').animate({height:'10vh'}, 300);
 				$('.skills-content').fadeIn();
 				$('.title').addClass('titleTwo');
@@ -98,7 +98,7 @@ $(document).ready(function(){
 				SkillsClick=0;
 				original();
 				$('.content').fadeOut();
-				$('.skills').animate({width: skillsWidth, height:'33.3vh'}, 300);
+				$('.skills').animate({width: skillsWidth, height:'28vh'}, 300);
 				$('.projects').fadeIn();
 				$('.projects').animate({width:projectsWidth});
 				$('.title').removeClass('titleTwo');
@@ -113,7 +113,7 @@ $(document).ready(function(){
 				$('.about-content, .home-content, .skills-content, .contact-content').css('display', 'none');
 				$('.contact').animate({width:'0'}, 200)
 				$('.contact').fadeOut();
-				$('.github').animate({width:'100%', height:'80vh'}, 300);
+				$('.github').animate({width:'100%', height:'64vh'}, 300);
 				$('.about, .home, .projects, .skills').animate({height:'10vh'}, 300);
 				$('.github-content').fadeIn(400);
 				$('.title').addClass('titleTwo');
@@ -122,7 +122,7 @@ $(document).ready(function(){
 				GithubClick=0;
 				original();
 				$('.content').fadeOut();
-				$('.github').animate({width: githubWidth, height:'33.3vh'}, 300);
+				$('.github').animate({width: githubWidth, height:'28vh'}, 300);
 				$('.contact').fadeIn();
 				$('.title').removeClass('titleTwo');
 			}
@@ -136,7 +136,7 @@ $(document).ready(function(){
 				$('.about-content, .home-content, .skills-content, .github-content').css('display', 'none');
 				$('.github').animate({width:'0'}, 200)
 				$('.github').fadeOut();
-				$('.contact').animate({width:'100%', height:'80vh'}, 300);
+				$('.contact').animate({width:'100%', height:'64vh'}, 300);
 				$('.about, .home, .projects, .skills').animate({height:'10vh'}, 300);
 				$('.contact-content').fadeIn(400);
 				$('.title').addClass('titleTwo');
@@ -145,7 +145,7 @@ $(document).ready(function(){
 				ContactClick=0;
 				original();
 				$('.content').fadeOut();
-				$('.contact').animate({height:'33.3vh'}, 300);
+				$('.contact').animate({height:'28vh'}, 300);
 				$('.github').fadeIn();
 				$('.title').removeClass('titleTwo');
 			}
@@ -153,7 +153,7 @@ $(document).ready(function(){
 
 	} else {
 
-	}g;
+	};
 
 });
 
