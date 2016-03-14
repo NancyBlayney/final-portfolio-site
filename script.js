@@ -153,6 +153,34 @@ $(document).ready(function(){
 
 	} else {
 
+		var SkillsClick = 0;
+
+		$('.block').mouseover(function(){
+			$(this).css({'color':'black','font-size':'1.2em'});
+		});
+
+		$('.block').mouseout(function(){
+			$(this).css({'color':'white','font-size':'1em'});
+		});
+
+		$('.skills').click(function() {
+			if (SkillsClick==0){
+				SkillsClick=1;
+				$('.skills').animate({height:'80vh'});
+				$('.github, .contact').animate({width:'66.7%'});
+				$('.home, .about, .projects').animate({height: '10vh'});
+			}
+			else{
+				SkillsClick=0;
+				$('.github, .contact').animate({width:'33.3%'});
+				$('.home, .about, .skills').animate({height: '37vh'});
+				$('.projects').animate({height: '20vh'});
+			}
+		});
+
+
+
+
 	};
 
 });
