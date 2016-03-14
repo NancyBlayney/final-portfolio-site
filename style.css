@@ -212,24 +212,19 @@ html, body {
 	}
 	.about {
 		width: 50%;
-		float: left;
 	}
 	.projects {
 		width: 100%;
-		float: left;
 		height: 20vh;
 	}
 	.skills {
 		width: 33.3%;
-		float: left;
 	}
 	.github {
 		width: 33.3%;
-		float: left;
 	}
 	.contact {
 		width: 33.3%;
-		float: left;
 	}
 
 	.block p {
@@ -272,22 +267,17 @@ html, body {
 }
 
 
+.container:after, .projects:after{
+  content: "";
+  display: table;
+  clear: both; 
+}
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-.container:after {
+.container:after{
   content: "";
   display: table;
   clear: both; 
