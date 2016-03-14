@@ -1,0 +1,194 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box; 
+  background-color: black;
+  color: white;
+}
+
+.home {
+	box-shadow: inset 0 0 0 1000px rgba(35,227,161, .7);
+	background: url(images/home.png); 
+	background-size: cover;
+}
+
+.about {
+	box-shadow: inset 0 0 0 1000px rgba(35,197,227, .7);
+	background: url(images/about.png); 
+	background-size: cover;
+}
+
+.projects {
+	box-shadow: inset 0 0 0 1000px rgba(184,127,237, .7);
+	background: url(images/projects.png); 
+	background-size: cover;
+}
+
+.skills {
+	background-color: #fb6565;
+	box-shadow: inset 0 0 0 1000px rgba(251,101,101, .7);
+	background: url(images/skills.png); 
+	background-size: cover;
+}
+
+.github {
+	background-color: #ffa500;
+	box-shadow: inset 0 0 0 1000px rgba(255,165,0, .7);
+	background: url(images/github.png); 
+	background-size: cover;
+}
+
+.contact {
+	background-color: #ffd700;
+	box-shadow: inset 0 0 0 1000px rgba(255,215,0, .7);
+	background: url(images/contact.png); 
+	background-size: cover;
+}
+
+
+@media only screen and (min-width : 0px) and (max-width: 640px) {
+	.block {
+		height: 33.3vh;
+		position: relative;
+		margin-top: 3%;
+	}
+
+	.container {
+		width: 100%;
+		height: 100%;
+	}
+
+ .block h2 {
+ 		margin: 0;
+		vertical-align: bottom;
+	}
+
+	.title {
+		position: absolute;
+		bottom: 10%;
+		right: 3%;
+	} 
+
+	.titleTwo {
+		position: absolute;
+		bottom: 10%;
+		left: 3%;
+	}
+
+	.left {
+		float:left;
+	}
+
+	.right {
+		float: right;
+	}
+
+	.content {
+		display: none;
+		float: left
+	}
+
+	.home {
+		width: 40%;
+	}
+	.about {
+		width: 57%;
+	}
+	.projects {
+		width: 67%;
+	}
+	.skills {
+		width: 30%
+	}
+	.github {
+		width: 35%;
+	}
+	.contact {
+		width: 62%;
+	}
+ 
+}
+
+
+
+@media (min-width: 641px) {
+	.block {
+		padding: 5%;
+		height: 300px;
+	}
+}
+
+@media (min-width: 961px) {
+
+	.block {
+		padding: 5%;
+		height: 500px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container:after {
+  content: "";
+  display: table;
+  clear: both; 
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 400px) {
+
+}
+/* Larger than mobile */
+@media (min-width: 400px) {}
+
+/* Larger than phablet (also point when grid becomes active) */
+@media (min-width: 550px) {}
+
+/* Larger than tablet */
+@media (min-width: 750px) {}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {}
