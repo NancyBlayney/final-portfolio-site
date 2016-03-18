@@ -1,8 +1,14 @@
 $(document).ready(function(){
 
 	var mq = window.matchMedia('screen and (min-width : 0px) and (max-width: 640px)');
-	
 
+	var AboutClick = 0;
+	var HomeClick = 0;
+	var SkillsClick = 0;
+	var GithubClick = 0;
+	var ContactClick = 0;
+	var ProjectsClick = 0;
+	var Clicker = 0;
 
 	function setClick(){
 		AboutClick = 0;
@@ -14,14 +20,6 @@ $(document).ready(function(){
 	}
 
 	if (mq.matches) {
-
-		var AboutClick = 0;
-		var HomeClick = 0;
-		var SkillsClick = 0;
-		var GithubClick = 0;
-		var ContactClick = 0;
-		var ProjectsClick = 0;
-		var Clicker = 0;
 
 		var aboutWidth = '57%';
 		var homeWidth = '40%';
@@ -170,24 +168,13 @@ $(document).ready(function(){
 		});
 
 
-		$('#clock').click(function(){
-
-		});
-		$('#html').click(function(){
-
-		});
-		$('#html').click(function(){
-
-		});
-
-
 		$('.skills').click(function() {
 			if (SkillsClick==0){
 				setClick();
 				SkillsClick=1;
 				original();
 				$('.about-content, .home-content, .contact-content, .github-content').css('display', 'none');
-				$('.projects').animate({width:'0'}, 300);
+				$('.projects').animate({width:'0'}, 100);
 				$('.projects').fadeOut();
 				$('.skills').animate({width:'100%', height:'64vh'}, 300)
 				$('.about, .home, .contact, .github').animate({height:'10vh'}, 300);
@@ -196,12 +183,9 @@ $(document).ready(function(){
 			}
 			else{
 				SkillsClick=0;
-				original();
 				$('.content').fadeOut();
-				$('.skills').animate({width: skillsWidth, height:'28vh'}, 300);
-				$('.projects').fadeIn();
-				$('.projects').animate({width:projectsWidth});
-				$('.title').removeClass('titleTwo');
+				$('.skills').animate({width: skillsWidth, height:'28vh'});
+				original();
 			}
 		});
 
@@ -283,13 +267,6 @@ $(document).ready(function(){
 		};
 
 
-
-
-		var SkillsClick = 0;
-		var ProjectsClick = 0;
-		var AboutClick = 0;
-		var HomeClick = 0;
-		var ContactClick = 0;
 
 		$('.block').mouseover(function(){
 			$(this).css({'color':'black','font-size':'1.2em'});
