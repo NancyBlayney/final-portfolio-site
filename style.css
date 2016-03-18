@@ -79,16 +79,13 @@ a .fa:hover{
 }
 
 
-.home:hover, .about:hover, .skills:hover, .fa-github:hover, .contact:hover, #expand-projects, .github {
+.home:hover, .about:hover, .skills:hover, .fa-github:hover, .contact:hover, #expand-projects, .github{
 	cursor: pointer;
 }
 
-.projects-content {
-	display: none;
-}
-
 #expand-projects {
-	opacity: 0;
+	width: 100%;
+	padding-left: 5%;
 }
 
 .block {
@@ -111,13 +108,32 @@ a .fa:hover{
 	float: right;
 }
 .content {
-/*	display: none;*/
+	display: none;
 	float: left
+	width: 100%;
+	text-align: center;
+	margin-top: 25%;
+	padding: 3%;
+}
+
+.home-content {
+	margin-top: 40%;
+}
+
+.about-content {
+	margin-top: 35%;
+}
+
+.projects-content {
+	display: block;
+	margin: 0;
+	padding: 0;
 }
 
 .home {
 	width: 40%;
 }
+
 .about {
 	width: 57%;
 }
@@ -134,19 +150,63 @@ a .fa:hover{
 
 .github .fa{
 	font-size: 30vw;
-	margin-left: 40vw;
-	margin-top: 40vw;
 }
 
 .contact {
 	width: 62%;
 }
 
+.projects-content img {
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 3%;
+	display: none;
+}
 
+.project {
+	display: none;
+	width: 100%;
+	height: 60px;
+}
 
+.project:hover{
+	cursor:pointer;
+}
 
+.html-project{
+	box-shadow: inset 0 0 0 1000px rgba(110,76,142, .7);
+}
 
+.clock-project{
+	box-shadow: inset 0 0 0 1000px rgba(128,88,165, .7);
+}
 
+.modal-project{
+	box-shadow: inset 0 0 0 1000px rgba(147,101,189, .7);
+}
+
+.darin-project{
+	box-shadow: inset 0 0 0 1000px rgba(165,114,213, .7);
+}
+
+.rails-project{
+	box-shadow: inset 0 0 0 1000px rgba(184,127,237, .7);
+}
+
+.project h2{
+	padding-top: 5%;
+	margin: 0;
+}
+
+.fixed-title{
+	position: fixed;
+	top: 10%;
+	right: 10%;
+}
+
+.zee {
+	z-index: -1;
+}
 
 
 
@@ -157,9 +217,6 @@ a .fa:hover{
 
 
 @media (min-width: 641px) {
-  .container {
-  	margin: 0 auto;
-  }
 
 	.block {
 		height: 36vh;
@@ -183,7 +240,15 @@ a .fa:hover{
 
 	.content{
 		padding: 3%;
-		display: none;
+		display: none; 
+	}
+
+	.home-content, .contact-content{
+		margin-top: 15%;
+	}
+
+	.skills-content, .about-content{
+		margin-top: 10%;
 	}
 
 	.home {
@@ -196,6 +261,7 @@ a .fa:hover{
 		width: 100%;
 		height: 20vh;
 	}
+
 	.skills {
 		width: 33.3%;
 	}
@@ -237,6 +303,11 @@ a .fa:hover{
 		display: table;
 		clear: both;
 	}
+
+	#html, #clock, #modal, #darin {
+		display: none;
+	}
+
 
 
 }

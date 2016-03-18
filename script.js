@@ -20,6 +20,8 @@ $(document).ready(function(){
 		var SkillsClick = 0;
 		var GithubClick = 0;
 		var ContactClick = 0;
+		var ProjectsClick = 0;
+		var Clicker = 0;
 
 		var aboutWidth = '57%';
 		var homeWidth = '40%';
@@ -50,7 +52,7 @@ $(document).ready(function(){
 				$('.about').fadeOut();
 				$('.home').animate({width:'100%', height:'64vh'}, 300);
 				$('.projects, .skills, .contact, .github').animate({height:'10vh'}, 300);
-				$('.home-content').fadeIn();
+				$('.home-content').delay(500).fadeIn(1000);
 				$('.title').addClass('titleTwo');
 			}
 			else{
@@ -72,7 +74,7 @@ $(document).ready(function(){
 				$('.home').fadeOut();
 				$('.about').animate({width:'100%', height:'64vh'}, 300);
 				$('.projects, .skills, .contact, .github').animate({height:'10vh'}, 300);
-				$('.about-content').fadeIn();
+				$('.about-content').delay(500).fadeIn(1000);
 				$('.title').addClass('titleTwo');
 			}
 			else{
@@ -86,6 +88,99 @@ $(document).ready(function(){
 			}
 		});
 
+
+		$('#expand-projects').click(function() {
+			if (ProjectsClick==0){
+				ProjectsClick=1;
+				$('.projects').animate({height:'90vh', width:'100%'});
+				$('.projects-title').addClass('fixed-title');
+				$('.github, .contact, .skills, .home, .about').fadeOut();
+				$('.project').delay(500).fadeIn(1000);
+			}
+			else{
+				ProjectsClick = 0;
+				$('.project').fadeOut();
+				$('.projects-title').removeClass('fixed-title');
+				original()
+			}
+		});
+
+		$('.html-project').click(function(){
+			if (Clicker == 0){
+				Clicker = 1;
+				$('.html-project').animate({height:'500px'});
+				$('.html-img').css('display', 'block');
+			}
+			else{
+				Clicker = 0;
+				$('.html-project').animate({height:'60px'});
+				$('.html-img').css('display', 'none');
+			}
+		});
+		$('.clock-project').click(function(){
+			if (Clicker == 0){
+				Clicker = 1;
+				$('.clock-project').animate({height:'500px'});
+				$('.clock-img').css('display', 'block');
+			}
+			else{
+				Clicker = 0;
+				$('.clock-project').animate({height:'60px'});
+				$('.clock-img').css('display', 'none');
+			}
+		});
+
+		$('.modal-project').click(function(){
+			if (Clicker == 0){
+				Clicker = 1;
+				$('.modal-project').animate({height:'500px'});
+				$('.modal-img').css('display', 'block');
+			}
+			else{
+				Clicker = 0;
+				$('.modal-project').animate({height:'60px'});
+				$('.modal-img').css('display', 'none');
+			}
+		});
+
+		$('.darin-project').click(function(){
+			if (Clicker == 0){
+				Clicker = 1;
+				$('.darin-project').animate({height:'500px'});
+				$('.darin-img').css('display', 'block');
+			}
+			else{
+				Clicker = 0;
+				$('.darin-project').animate({height:'60px'});
+				$('.darin-img').css('display', 'none');
+			}
+		});
+
+		$('.rails-project').click(function(){
+			if (Clicker == 0){
+				Clicker = 1;
+				$('.rails-project').animate({height:'500px'});
+				$('.rails-img').css('display', 'block');
+			}
+			else{
+				Clicker = 0;
+				$('.rails-project').animate({height:'60px'});
+				$('.rails-img').css('display', 'none');
+			}
+		});
+
+
+		$('#clock').click(function(){
+
+		});
+		$('#html').click(function(){
+
+		});
+		$('#html').click(function(){
+
+		});
+
+
 		$('.skills').click(function() {
 			if (SkillsClick==0){
 				setClick();
@@ -96,7 +191,7 @@ $(document).ready(function(){
 				$('.projects').fadeOut();
 				$('.skills').animate({width:'100%', height:'64vh'}, 300)
 				$('.about, .home, .contact, .github').animate({height:'10vh'}, 300);
-				$('.skills-content').fadeIn();
+				$('.skills-content').delay(500).fadeIn(1000);
 				$('.title').addClass('titleTwo');
 			}
 			else{
@@ -120,7 +215,7 @@ $(document).ready(function(){
 				$('.contact').fadeOut();
 				$('.github').animate({width:'100%', height:'64vh'}, 300);
 				$('.about, .home, .projects, .skills').animate({height:'10vh'}, 300);
-				$('.github-content').fadeIn(400);
+				$('.github-content').delay(500).fadeIn(1000);
 				$('.title').addClass('titleTwo');
 			}
 			else{
@@ -143,7 +238,7 @@ $(document).ready(function(){
 				$('.github').fadeOut();
 				$('.contact').animate({width:'100%', height:'64vh'}, 300);
 				$('.about, .home, .projects, .skills').animate({height:'10vh'}, 300);
-				$('.contact-content').fadeIn(400);
+				$('.contact-content').delay(500).fadeIn(1000);
 				$('.title').addClass('titleTwo');
 			}
 			else{
@@ -236,7 +331,7 @@ $(document).ready(function(){
 				$('.about').css('float','right');
 				$('.projects').animate({width:'50%'});
 				$('.about').animate({height: '56vh'});
-				$('.about-content').fadeIn();
+				$('.about-content').delay(500).fadeIn(1000);
 			}
 			else{
 				AboutClick=0;
@@ -262,7 +357,7 @@ $(document).ready(function(){
 				$('.projects').animate({height:'100%'});
 				$('.github, .contact, .skills').fadeOut();
 				$('.home, .about').animate({height: '10vh'});
-				$('.projects-content').fadeIn();
+				$('.projects-content').delay(500).fadeIn(1000);
 			}
 			else{
 				ProjectsClick=0;
@@ -285,7 +380,7 @@ $(document).ready(function(){
 				$('.skills').animate({height:'80vh'});
 				$('.github, .contact').animate({width:'66.7%'});
 				$('.home, .about, .projects').animate({height: '10vh'});
-				$('.skills-content').fadeIn();
+				$('.skills-content').delay(500).fadeIn(1000);
 			}
 			else{
 				SkillsClick=0;
@@ -295,7 +390,6 @@ $(document).ready(function(){
 				$('.content').fadeOut();
 			}
 		});
-
 
 		$('.contact').click(function() {
 			if (ContactClick==0){
@@ -307,7 +401,7 @@ $(document).ready(function(){
 				$(this).addClass('fixed');
 				$(this).animate({width: '100%', height: '95vh'});
 				$('.home, .about, .projects, .skills, .github').toggle();
-				$('.contact-content').fadeIn();
+				$('.contact-content').delay(500).fadeIn(1000);
 			}
 			else{
 				ContactClick=0;
