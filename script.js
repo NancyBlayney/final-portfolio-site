@@ -179,12 +179,12 @@ $(document).ready(function(){
 
 
 		function originalTwo (){
-			// $('.about').fadeIn().animate({width: '50%', height:'36vh'});
-			$('.projects').fadeIn().animate({width: '100%', height: '20vh'});
-			$('.skills').fadeIn().animate({width: '33.3%', height: '36vh'});
-			// $('.home').fadeIn().animate({width: '50%', height: '36vh'});
-			$('.contact').fadeIn().animate({width: '33.3%', height: '36vh'});
-			$('.github').fadeIn().animate({width: '33.3%', height: '36vh'});
+			$('.about').fadeIn().animate({width: '50%', height:'36vh'},200);
+			$('.projects').fadeIn().animate({width: '100%', height: '20vh'},200);
+			$('.skills').fadeIn().animate({width: '33.3%', height: '36vh'},200);
+			$('.home').fadeIn().animate({width: '50%', height: '36vh'},200);
+			$('.contact').fadeIn().animate({width: '33.3%', height: '36vh'},200);
+			$('.github').fadeIn().animate({width: '33.3%', height: '36vh'},200);
 		};
 
 
@@ -204,21 +204,45 @@ $(document).ready(function(){
 			$(this).css({'color':'white','font-size':'1em'});
 		});
 
-		$('.skills').click(function() {
-			if (SkillsClick==0){
+
+		$('.home').click(function() {
+			if (HomeClick==0){
+				if(SkillsClick == 1){
+					originalTwo();
+				};
 				setClick();
-				SkillsClick=1;
-				originalTwo();
-				$('.skills').animate({height:'80vh'});
-				$('.github, .contact').animate({width:'66.7%'});
-				$('.home, .about, .projects').animate({height: '10vh'});
+				HomeClick=1;
+				$('.projects-content').css('display','none');
+				$(this).animate({width: '100%', height: '95vh'});
+				$('.contact, .about, .projects, .skills, .github').toggle();
+				$('.home-content').delay(500).fadeIn(1000);
 			}
 			else{
-				SkillsClick=0;
-				// originalTwo();
-				$('.github, .contact').animate({width:'33.3%'});
-				$('.home, .about, .skills').animate({height: '36vh'});
-				$('.projects').animate({height: '20vh'});
+				HomeClick=0;
+				$(this).animate({width: '50%', height: '36vh'});
+				originalTwo();
+				$('.content').fadeOut();
+			}
+		});
+
+		$('.about').click(function() {
+			if (AboutClick==0){
+				if ((ProjectsClick == 1)||(SkillsClick == 1)){
+					originalTwo();
+				};
+				setClick();
+				AboutClick=1;
+				$('.projects-content').css('display','none');
+				$('.about').css('float','right');
+				$('.projects').animate({width:'50%'});
+				$('.about').animate({height: '56vh'});
+				$('.about-content').fadeIn();
+			}
+			else{
+				AboutClick=0;
+				$('.projects').animate({width:'100%'});
+				$('.about').animate({height: '36vh'});
+				$('.content').fadeOut();
 			}
 		});
 
@@ -230,10 +254,11 @@ $(document).ready(function(){
 
 		$('#expand-projects').click(function() {
 			if (ProjectsClick==0){
+				if ((SkillsClick == 1) || (AboutClick ==1)){
+					originalTwo();					
+				};
 				setClick();
 				ProjectsClick=1;
-				originalTwo();
-				$('#expand-projects').finish().html("<h1>X</h1>");
 				$('.projects').animate({height:'100%'});
 				$('.github, .contact, .skills').fadeOut();
 				$('.home, .about').animate({height: '10vh'});
@@ -241,56 +266,59 @@ $(document).ready(function(){
 			}
 			else{
 				ProjectsClick=0;
-				// originalTwo();
+				originalTwo();
 				$('#expand-projects').finish().animate({ "opacity": 0 }, 1);
 				$('.projects').delay(300).animate({height: '20vh'}, 300);
 				$('.github, .contact, .skills').fadeIn();
 				$('.home, .about, .skills').delay(300).animate({height: '36vh'}, 300);
-				$('.projects-content').fadeOut();
-				$('#expand-projects').html("<h3>Click me to expand!</h3>");
+				$('.content').fadeOut();
 			}
 		});
 
-		$('.about').click(function() {
-			if (AboutClick==0){
+		$('.skills').click(function() {
+			if (SkillsClick==0){
+				if (AboutClick == 1){
+					originalTwo();		
+				}
 				setClick();
-				AboutClick=1;
-				// originalTwo();
-				$('.about').css('float','right');
-				$('.projects').animate({width:'50%'}, 100);
-				$('.about').animate({height: '56vh'}, 200);
+				SkillsClick=1;
+				$('.skills').animate({height:'80vh'});
+				$('.github, .contact').animate({width:'66.7%'});
+				$('.home, .about, .projects').animate({height: '10vh'});
+				$('.skills-content').fadeIn();
 			}
 			else{
-				AboutClick=0;
-				originalTwo();
-				$('.about').animate({height: '36vh'})
-				$('.about').css('float','left');
-				// $('.github, .contact').animate({width:'33.3%'});
-				// $('.home, .about, .skills').animate({height: '36vh'});
-				// $('.projects').animate({height: '20vh'});
+				SkillsClick=0;
+				$('.github, .contact').animate({width:'33.3%'});
+				$('.home, .about, .skills').animate({height: '36vh'});
+				$('.projects').animate({height: '20vh'});
+				$('.content').fadeOut();
 			}
 		});
 
-		// $('.contact').click(function() {
-		// 	if (ContactClick==0){
-		// 		setClick();
-		// 		ContactClick=1;
-		// 		// originalTwo();
-		// 		$('.skills').css({position: 'fixed', left: 0, bottom: 0});
-		// 		$('.one').addClass('z');
-		// 		$('.github').css({position: 'fixed', right: '33.3%', bottom: 0});
-		// 		$('.contact').animate({position: 'fixed', right:0, top:0, height:'92vh'});
-		// 		$('.home, .about').animate({width: '33.3%'}).addClass('z');
-		// 		$('.projects').animate({width: '66.6%'});
-		// 	}
-		// 	else{
-		// 		ContactClick=0;
-		// 		// originalTwo();
-		// 		$('.github, .contact').animate({width:'33.3%'});
-		// 		$('.home, .about, .skills').animate({height: '36vh'});
-		// 		$('.projects').animate({height: '20vh'});
-		// 	}
-		// });
+
+		$('.contact').click(function() {
+			if (ContactClick==0){
+				if ((SkillsClick == 1) || (AboutClick ==1)){
+					originalTwo();					
+				};				
+				setClick();
+				ContactClick=1;
+				$(this).addClass('fixed');
+				$(this).animate({width: '100%', height: '95vh'});
+				$('.home, .about, .projects, .skills, .github').toggle();
+				$('.contact-content').fadeIn();
+			}
+			else{
+				ContactClick=0;
+				$(this).animate({width: '33.3%', height: '36vh'});
+				originalTwo();
+				$('.content').fadeOut();
+				setTimeout(function() {
+					$('.contact').removeClass('fixed');
+				}, 500);
+			}
+		});
 
 
 

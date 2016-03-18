@@ -5,6 +5,15 @@ html, body {
     background-color: black;
 }
 
+a{
+	color: white;
+}
+
+a .fa:hover{
+	color: #8cece2;
+	transform: scale(1.2);
+}
+
 .logo {
 	text-align: center;
 	padding: 0;
@@ -13,9 +22,9 @@ html, body {
 }
 
 .container {
+	width: 100%;
+	color: white;
   position: relative;
-  width: 100%;
-/*  max-width: 960px;*/
   margin: 0 auto;
   box-sizing: border-box; 
   background-color: black;
@@ -24,6 +33,11 @@ html, body {
   font-weight: 500;
 }
 
+.container:after{
+  content: "";
+  display: table;
+  clear: both; 
+}
 
 .home {
 	box-shadow: inset 0 0 0 1000px rgba(35,227,161, .7);
@@ -65,10 +79,9 @@ html, body {
 }
 
 
-.home:hover, .about:hover, .skills:hover, .fa-github:hover, .contact:hover, #expand-projects {
+.home:hover, .about:hover, .skills:hover, .fa-github:hover, .contact:hover, #expand-projects, .github {
 	cursor: pointer;
 }
-
 
 .projects-content {
 	display: none;
@@ -78,89 +91,56 @@ html, body {
 	opacity: 0;
 }
 
-
-
-
-
-
-@media only screen and (min-width : 0px) and (max-width: 640px) {
-	.block {
-		height: 28vh;
-		position: relative;
-		margin-top: 3%;
-	}
-
-	.row:after {
-	  content: "";
-	  display: table;
-	  clear: both; 
-	}
-	.container {
-		width: 100%;
-		height: 100%;
-		color: white;
-	}
-
- .block h2 {
- 		margin: 0;
-		vertical-align: bottom;
-	}
-
-	.title {
-		position: absolute;
-		bottom: 10%;
-		right: 3%;
-	} 
-
-	.titleTwo {
-		position: absolute;
-		bottom: 10%;
-		left: 3%;
-	}
-
-	.left {
-		float:left;
-	}
-
-	.right {
-		float: right;
-	}
-
-	.content {
-		display: none;
-		float: left
-	}
-
-	.home {
-		width: 40%;
-	}
-	.about {
-		width: 57%;
-	}
-	.projects {
-		width: 67%;
-	}
-	.skills {
-		width: 30%
-	}
-
-	.github {
-		width: 35%;
-	}
-
-	.github .fa{
-		font-size: 30vw;
-		margin-left: 40vw;
-		margin-top: 40vw;
-	}
-	.contact {
-		width: 62%;
-	}
- 
-
+.block {
+	height: 28vh;
+	position: relative;
+	margin-top: 3%;
 }
 
+.title {
+	position: absolute;
+	bottom: 2%;
+	right: 3%;
+} 
 
+.left {
+	float:left;
+}
+
+.right {
+	float: right;
+}
+.content {
+/*	display: none;*/
+	float: left
+}
+
+.home {
+	width: 40%;
+}
+.about {
+	width: 57%;
+}
+.projects {
+	width: 67%;
+}
+.skills {
+	width: 30%
+}
+
+.github {
+	width: 35%;
+}
+
+.github .fa{
+	font-size: 30vw;
+	margin-left: 40vw;
+	margin-top: 40vw;
+}
+
+.contact {
+	width: 62%;
+}
 
 
 
@@ -184,18 +164,16 @@ html, body {
 	.block {
 		height: 36vh;
 		float: left;
+		margin: 0;
 	}
 
-	h2 {
-		text-align: right;
-		padding-right: 10%;
-		padding-top: 2%;
-		padding-bottom: 0;
-	}
+	.title {
+		top: 2%;
+	} 
 
 	h3 {
-		text-align: right;
-		padding-right: 10%;
+		width: 300px;
+		float: right;
 	}
 
 	.wrapper {
@@ -203,8 +181,9 @@ html, body {
 		margin: 0 auto;
 	}
 
-	.block p{
+	.content{
 		padding: 3%;
+		display: none;
 	}
 
 	.home {
@@ -223,17 +202,18 @@ html, body {
 	.github {
 		width: 33.3%;
 	}
+
+	.github-content{
+		display: inline !important;
+	}
+
 	.contact {
 		width: 33.3%;
 	}
 
-	.block p {
-		display: none;
-	}
-
-	.fa-github {
+	.github .fa{
 		font-size: 10vw;
-		margin-top: 2vw;
+		margin-top: 5vw;
 		margin-left:12vw;
 	}
 
@@ -258,29 +238,20 @@ html, body {
 		clear: both;
 	}
 
-	#expand-projects {
-		float: right;
-	}
-
-
 
 }
 
 
-.container:after, .projects:after{
-  content: "";
-  display: table;
-  clear: both; 
-}
 
 
 
 
+/*classes to be added and removed in jquery*/
 
-.container:after{
-  content: "";
-  display: table;
-  clear: both; 
+.fixed {
+	position: fixed;
+	bottom: 0;
+	right: 0;
 }
 
 
@@ -290,27 +261,3 @@ html, body {
 
 
 
-
-
-
-
-
-
-
-@media (max-width: 400px) {
-
-}
-/* Larger than mobile */
-@media (min-width: 400px) {}
-
-/* Larger than phablet (also point when grid becomes active) */
-@media (min-width: 550px) {}
-
-/* Larger than tablet */
-@media (min-width: 750px) {}
-
-/* Larger than desktop */
-@media (min-width: 1000px) {}
-
-/* Larger than Desktop HD */
-@media (min-width: 1200px) {}
