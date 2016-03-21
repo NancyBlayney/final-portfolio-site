@@ -353,7 +353,7 @@ $(document).ready(function(){
 				$('.projects').delay(300).animate({height: '20vh'}, 300);
 				$('.github, .contact, .skills').fadeIn();
 				$('.home, .about, .skills').delay(300).animate({height: '36vh'}, 300);
-				$('.content').fadeOut();
+				$('.project').fadeOut();
 			}
 		});
 
@@ -386,7 +386,7 @@ $(document).ready(function(){
 				setClick();
 				ContactClick=1;
 				$(this).addClass('fixed');
-				$(this).animate({width: '100%', height: '95vh'});
+				$(this).animate({width: '100%', height: '92vh'});
 				$('.home, .about, .projects, .skills, .github').toggle();
 				$('.contact-content').delay(500).fadeIn(1000);
 			}
