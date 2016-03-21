@@ -94,9 +94,11 @@ $(document).ready(function(){
 				$('.projects-title').addClass('fixed-title');
 				$('.github, .contact, .skills, .home, .about').fadeOut();
 				$('.project').delay(500).fadeIn(1000);
+				$('#expand-projects').html('<h3>Exit projects</h3>');
 			}
 			else{
 				ProjectsClick = 0;
+				$('#expand-projects').html('<h3>Click here to see more!</h3>');
 				$('.project').fadeOut();
 				$('.projects-title').removeClass('fixed-title');
 				original()
@@ -106,24 +108,24 @@ $(document).ready(function(){
 		$('.html-project').click(function(){
 			if (Clicker == 0){
 				Clicker = 1;
-				$('.html-project').animate({height:'500px'});
+				$('.html-project').animate({height:'400px'});
 				$('.html-img').css('display', 'block');
 			}
 			else{
 				Clicker = 0;
-				$('.html-project').animate({height:'60px'});
+				$('.html-project').animate({height:'90px'});
 				$('.html-img').css('display', 'none');
 			}
 		});
 		$('.clock-project').click(function(){
 			if (Clicker == 0){
 				Clicker = 1;
-				$('.clock-project').animate({height:'500px'});
+				$('.clock-project').animate({height:'400px'});
 				$('.clock-img').css('display', 'block');
 			}
 			else{
 				Clicker = 0;
-				$('.clock-project').animate({height:'60px'});
+				$('.clock-project').animate({height:'90px'});
 				$('.clock-img').css('display', 'none');
 			}
 		});
@@ -131,12 +133,12 @@ $(document).ready(function(){
 		$('.modal-project').click(function(){
 			if (Clicker == 0){
 				Clicker = 1;
-				$('.modal-project').animate({height:'500px'});
+				$('.modal-project').animate({height:'400px'});
 				$('.modal-img').css('display', 'block');
 			}
 			else{
 				Clicker = 0;
-				$('.modal-project').animate({height:'60px'});
+				$('.modal-project').animate({height:'90px'});
 				$('.modal-img').css('display', 'none');
 			}
 		});
@@ -144,12 +146,12 @@ $(document).ready(function(){
 		$('.darin-project').click(function(){
 			if (Clicker == 0){
 				Clicker = 1;
-				$('.darin-project').animate({height:'500px'});
+				$('.darin-project').animate({height:'400px'});
 				$('.darin-img').css('display', 'block');
 			}
 			else{
 				Clicker = 0;
-				$('.darin-project').animate({height:'60px'});
+				$('.darin-project').animate({height:'90px'});
 				$('.darin-img').css('display', 'none');
 			}
 		});
@@ -157,13 +159,26 @@ $(document).ready(function(){
 		$('.rails-project').click(function(){
 			if (Clicker == 0){
 				Clicker = 1;
-				$('.rails-project').animate({height:'500px'});
+				$('.rails-project').animate({height:'400px'});
 				$('.rails-img').css('display', 'block');
 			}
 			else{
 				Clicker = 0;
-				$('.rails-project').animate({height:'60px'});
+				$('.rails-project').animate({height:'90px'});
 				$('.rails-img').css('display', 'none');
+			}
+		});
+
+		$('.jukebox-project').click(function(){
+			if (Clicker == 0){
+				Clicker = 1;
+				$('.jukebox-project').animate({height:'400px'});
+				$('.jukebox-img').css('display', 'block');
+			}
+			else{
+				Clicker = 0;
+				$('.jukebox-project').animate({height:'90px'});
+				$('.jukebox-img').css('display', 'none');
 			}
 		});
 
@@ -269,7 +284,7 @@ $(document).ready(function(){
 
 
 		$('.block').mouseover(function(){
-			$(this).css({'color':'black','font-size':'1.2em'});
+			$(this).css({'color':'black','font-size':'1.1em'});
 		});
 
 		$('.block').mouseout(function(){
@@ -284,7 +299,6 @@ $(document).ready(function(){
 				};
 				setClick();
 				HomeClick=1;
-				$('.projects-content').css('display','none');
 				$(this).animate({width: '100%', height: '95vh'});
 				$('.contact, .about, .projects, .skills, .github').toggle();
 				$('.home-content').delay(500).fadeIn(1000);
@@ -318,11 +332,6 @@ $(document).ready(function(){
 			}
 		});
 
-		$('.projects, .projects-content, #expand-projects, .projects-title').mouseover(function(){
-			$('#expand-projects').finish().animate({ "opacity": 1 });
-		}).mouseout(function(){
-			$('#expand-projects').finish().animate({ "opacity": 0 }, 0);
-		})
 
 		$('#expand-projects').click(function() {
 			if (ProjectsClick==0){
@@ -334,12 +343,13 @@ $(document).ready(function(){
 				$('.projects').animate({height:'100%'});
 				$('.github, .contact, .skills').fadeOut();
 				$('.home, .about').animate({height: '10vh'});
-				$('.projects-content').delay(500).fadeIn(1000);
+				$('.project').delay(500).fadeIn(1000);
+				$('#expand-projects').html('<h3>Exit projects</h3>');
 			}
 			else{
 				ProjectsClick=0;
 				originalTwo();
-				$('#expand-projects').finish().animate({ "opacity": 0 }, 1);
+				$('#expand-projects').html('<h3>Click here to see more!</h3>');
 				$('.projects').delay(300).animate({height: '20vh'}, 300);
 				$('.github, .contact, .skills').fadeIn();
 				$('.home, .about, .skills').delay(300).animate({height: '36vh'}, 300);

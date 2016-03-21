@@ -104,6 +104,7 @@ a .fa:hover{
 	background: url(images/projects.png); 
 	background-size: cover;
 	width: 67%;
+	overflow: auto;
 }
 
 .projects-content {
@@ -115,8 +116,22 @@ a .fa:hover{
 }
 
 #expand-projects {
-	width: 100%;
-	padding-left: 5%;
+	width: 40%;
+  border-radius: 24px;
+  opacity: .6;
+  background:rgba(0,0,0, 0.4);
+  border: 2px solid #755097;
+  padding: 3px 3px;
+  margin: 10px;
+  text-align: center;
+  transition: all 60ms ease-in-out;
+}
+
+#expand-projects:hover, #expand-projects:active {
+  background:rgba(147,101,189, 0.8);
+  transition: all 60ms ease;
+  border-color: #755097;
+  box-shadow: 0 0 50px rgba(255,218,185, 1);
 }
 
 .skills {
@@ -164,6 +179,7 @@ a .fa:hover{
 
 /*Projects Styling*/
 
+
 .projects-content img {
 	width: 80%;
 	margin: 0 auto;
@@ -175,14 +191,14 @@ a .fa:hover{
 	display: none;
 	width: 100%;
 	height: 90px;
+	overflow: hidden;
 }
 
 .project:hover{
 	cursor:pointer;
 }
 
-.html-project{
-	margin-top: 10%;
+.html-project {
 	box-shadow: inset 0 0 0 1000px rgba(110,76,142, .7);
 }
 
@@ -202,14 +218,18 @@ a .fa:hover{
 	box-shadow: inset 0 0 0 1000px rgba(184,127,237, .7);
 }
 
+.jukebox-project{
+	box-shadow: inset 0 0 0 1000px rgba(191,139,238, .7);
+}
+
 .project h2{
 	padding-top: 8%;
 	margin: 0;
 }
 
 .fixed-title{
-	position: fixed;
-	top: 10%;
+	position: absolute;
+	top: 2%;
 	right: 10%;
 }
 
@@ -267,10 +287,10 @@ li{
 		top: 2%;
 	} 
 
-	h3 {
+/*	h3 {
 		width: 300px;
 		float: right;
-	}
+	}*/
 
 	.wrapper {
 		width: 99%;
@@ -278,58 +298,65 @@ li{
 	}
 
 	.content{
-		padding: 3%;
 		display: none; 
 	}
 
-	.home-content, .contact-content{
+	.home-content, .skills-content{
 		margin-top: 15%;
 	}
-
-	.skills-content, .about-content{
-		margin-top: 10%;
+	.contact-content{
+		margin-top: 5%;
 	}
+
+
 
 	.home {
 		width: 50%;
 	}
+
 	.about {
 		width: 50%;
 	}
+
 	.projects {
 		width: 100%;
 		height: 20vh;
 	}
 
-	.skills {
-		width: 33.3%;
-	}
-	.github {
-		width: 33.3%;
-	}
-
-	.github-content{
-		display: inline !important;
-	}
-
-	.contact {
-		width: 33.3%;
-	}
-
-	.github .fa{
-		font-size: 10vw;
-		margin-top: 5vw;
-		margin-left:12vw;
+	#expand-projects {
+		width: 10%;
+		margin: 20px;
 	}
 
 	.projects-content {
 		width: 90%;
 		margin: 0 auto;
+		padding-bottom: 8vh;
+		overflow: auto;
+	}
+
+	.project h2 {
+		display: none;
 	}
 
 	.projects-content img {
 		width: 20vw;
-		margin: 2vw;
+		margin-left: 2vw;
+		display: inline;
+		float: left;
+		border-radius: 10%;
+	}
+
+	.projects-content img:hover {
+		border-color: #FFDAB9;
+  	box-shadow: 0 0 10px rgba(255,218,185, 1);
+  	transform: scale(1.1, 1.1)
+	}
+
+	.project{
+		box-shadow: inset 0 0 0 1000px rgba(184,127,237, 0);
+		height: 0px;
+		margin: 0;
 	}
 
 	.projects-title {
@@ -343,7 +370,30 @@ li{
 		clear: both;
 	}
 
-	#html, #clock, #modal, #darin {
+	.skills {
+		width: 33.3%;
+	}
+
+	.github {
+		width: 33.3%;
+		cursor: auto;
+	}
+
+	.github-content{
+		display: inline !important;
+	}
+
+	.github .fa{
+		font-size: 10vw;
+		margin-top: 5vw;
+		margin-left:12vw;
+	}
+
+	.contact {
+		width: 33.3%;
+	}
+
+	#html, #clock, #modal, #darin, #rails, #jukebox{
 		display: none;
 	}
 
