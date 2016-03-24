@@ -116,6 +116,7 @@ a .fa:hover{
 }
 
 #expand-projects {
+	display: none;
 	width: 40%;
   border-radius: 24px;
   opacity: .6;
@@ -275,6 +276,7 @@ li{
 
 
 @media (min-width: 641px) {
+
 
 	.block {
 		height: 36vh;

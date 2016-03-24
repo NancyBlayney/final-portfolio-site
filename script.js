@@ -1,6 +1,39 @@
 $(document).ready(function(){
+	
+	var flag = true;
+
+
+	function original (){
+		$('.about').fadeIn().animate({width: aboutWidth, height:'28vh'});
+		$('.projects').fadeIn().animate({width: projectsWidth, height: '28vh'});
+		$('.skills').fadeIn().animate({width: skillsWidth, height: '28vh'});
+		$('.home').fadeIn().animate({width: homeWidth, height: '28vh'});
+		$('.contact').fadeIn().animate({width: contactWidth, height: '28vh'});
+		$('.github').fadeIn().animate({width: githubWidth, height: '28vh'});
+	};
+
+	function originalTwo (){
+		$('.content').fadeOut();
+		$('.about').fadeIn().animate({width: '50%', height:'36vh'},200);
+		$('.projects').fadeIn().animate({width: '100%', height: '20vh'},200);
+		$('.skills').fadeIn().animate({width: '33.3%', height: '36vh'},200);
+		$('.home').fadeIn().animate({width: '50%', height: '36vh'},200);
+		$('.contact').fadeIn().animate({width: '33.3%', height: '36vh'},200);
+		$('.github').fadeIn().animate({width: '33.3%', height: '36vh'},200);
+		$('.contact').removeClass('fixed')
+	};
+
+
 
 	var mq = window.matchMedia('screen and (min-width : 0px) and (max-width: 640px)');
+
+	$(window).resize(function () {
+		mq.matches
+	}).resize();
+
+
+
+
 
 	var AboutClick = 0;
 	var HomeClick = 0;
@@ -12,11 +45,11 @@ $(document).ready(function(){
 
 	function setClick(){
 		AboutClick = 0;
-	  HomeClick = 0;
-	  SkillsClick = 0;
-	  GithubClick = 0;
-	  ContactClick = 0;
-	  ProjectsClick = 0;
+		HomeClick = 0;
+		SkillsClick = 0;
+		GithubClick = 0;
+		ContactClick = 0;
+		ProjectsClick = 0;
 	}
 
 	if (mq.matches) {
@@ -30,14 +63,7 @@ $(document).ready(function(){
 		
 
 
-		function original (){
-			$('.about').fadeIn().animate({width: aboutWidth, height:'28vh'});
-			$('.projects').fadeIn().animate({width: projectsWidth, height: '28vh'});
-			$('.skills').fadeIn().animate({width: skillsWidth, height: '28vh'});
-			$('.home').fadeIn().animate({width: homeWidth, height: '28vh'});
-			$('.contact').fadeIn().animate({width: contactWidth, height: '28vh'});
-			$('.github').fadeIn().animate({width: githubWidth, height: '28vh'});
-		};
+
 
 
 		$('.home').click(function() {
@@ -272,14 +298,7 @@ $(document).ready(function(){
 
 
 
-		function originalTwo (){
-			$('.about').fadeIn().animate({width: '50%', height:'36vh'},200);
-			$('.projects').fadeIn().animate({width: '100%', height: '20vh'},200);
-			$('.skills').fadeIn().animate({width: '33.3%', height: '36vh'},200);
-			$('.home').fadeIn().animate({width: '50%', height: '36vh'},200);
-			$('.contact').fadeIn().animate({width: '33.3%', height: '36vh'},200);
-			$('.github').fadeIn().animate({width: '33.3%', height: '36vh'},200);
-		};
+
 
 
 
@@ -318,7 +337,7 @@ $(document).ready(function(){
 				};
 				setClick();
 				AboutClick=1;
-				$('.projects-content').css('display','none');
+				$('.project').css('display','none');
 				$('.about').css('float','right');
 				$('.projects').animate({width:'50%'});
 				$('.about').animate({height: '56vh'});
@@ -333,13 +352,18 @@ $(document).ready(function(){
 		});
 
 
-		$('#expand-projects').click(function() {
+		$('.projects').click(function(e) {
+			if ($(e.target).parent().parent().hasClass('project')){
+				return
+			}
+			else {
 			if (ProjectsClick==0){
 				if ((SkillsClick == 1) || (AboutClick ==1)){
 					originalTwo();					
 				};
 				setClick();
 				ProjectsClick=1;
+				$('#expand-projects').toggle();
 				$('.projects').animate({height:'100%'});
 				$('.github, .contact, .skills').fadeOut();
 				$('.home, .about').animate({height: '10vh'});
@@ -349,12 +373,13 @@ $(document).ready(function(){
 			else{
 				ProjectsClick=0;
 				originalTwo();
-				$('#expand-projects').html('<h3>Click here to see more!</h3>');
+				$('#expand-projects').toggle();
 				$('.projects').delay(300).animate({height: '20vh'}, 300);
 				$('.github, .contact, .skills').fadeIn();
 				$('.home, .about, .skills').delay(300).animate({height: '36vh'}, 300);
 				$('.project').fadeOut();
 			}
+		}
 		});
 
 		$('.skills').click(function() {
@@ -378,27 +403,42 @@ $(document).ready(function(){
 			}
 		});
 
-		$('.contact').click(function() {
-			if (ContactClick==0){
-				if ((SkillsClick == 1) || (AboutClick ==1)){
-					originalTwo();					
-				};				
-				setClick();
-				ContactClick=1;
-				$(this).addClass('fixed');
-				$(this).animate({width: '100%', height: '92vh'});
-				$('.home, .about, .projects, .skills, .github').toggle();
-				$('.contact-content').delay(500).fadeIn(1000);
-			}
-			else{
-				ContactClick=0;
-				$(this).animate({width: '33.3%', height: '36vh'});
-				originalTwo();
-				$('.content').fadeOut();
-				setTimeout(function() {
-					$('.contact').removeClass('fixed');
-				}, 500);
-			}
+		// $('.exception').click(function(){
+		// 		console.log("EXCEPTION:" + $(this).attr('class'));
+		// 		flag = false;
+		// });
+
+		// $(document).keyup(function(e) {
+  //    if (e.keyCode == 27) { 
+  //    	originalTwo();
+  //   }
+		// });
+
+		$('.contact').click(function(e) {
+			if ($(e.target).parent().parent().hasClass('exception')){
+				return
+			} else {
+					if (ContactClick==0){
+						if ((SkillsClick == 1) || (AboutClick ==1)){
+							originalTwo();					
+						};
+										
+						setClick();
+						ContactClick=1;
+						$(this).addClass('fixed');
+						$(this).animate({width: '100%', height: '92vh'});
+						$('.home, .about, .projects, .skills, .github').toggle();
+						$('.contact-content').delay(500).fadeIn(1000);
+					} else {
+							ContactClick=0;
+							$(this).animate({width: '33.3%', height: '36vh'});
+							originalTwo();
+							$('.content').fadeOut();
+							setTimeout(function() {
+								$('.contact').removeClass('fixed');
+							}, 500);
+					};
+			};			
 		});
 
 
