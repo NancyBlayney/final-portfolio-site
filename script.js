@@ -14,12 +14,12 @@ $(document).ready(function(){
 
 	function originalTwo (){
 		$('.content').fadeOut();
-		$('.about').fadeIn().animate({width: '50%', height:'36vh'},200);
+		$('.about').fadeIn().animate({width: '50%', height:'35vh'},200);
 		$('.projects').fadeIn().animate({width: '100%', height: '20vh'},200);
-		$('.skills').fadeIn().animate({width: '33.3%', height: '36vh'},200);
-		$('.home').fadeIn().animate({width: '50%', height: '36vh'},200);
-		$('.contact').fadeIn().animate({width: '33.3%', height: '36vh'},200);
-		$('.github').fadeIn().animate({width: '33.3%', height: '36vh'},200);
+		$('.skills').fadeIn().animate({width: '33.3%', height: '35vh'},200);
+		$('.home').fadeIn().animate({width: '50%', height: '35vh'},200);
+		$('.contact').fadeIn().animate({width: '33.3%', height: '35vh'},200);
+		$('.github').fadeIn().animate({width: '33.3%', height: '35vh'},200);
 		$('.contact').removeClass('fixed')
 	};
 
@@ -318,15 +318,15 @@ $(document).ready(function(){
 				};
 				setClick();
 				HomeClick=1;
-				$(this).animate({width: '100%', height: '95vh'});
+				$(this).animate({width: '100%', height: '90vh'});
 				$('.contact, .about, .projects, .skills, .github').toggle();
 				$('.home-content').delay(500).fadeIn(1000);
 			}
 			else{
 				HomeClick=0;
-				$(this).animate({width: '50%', height: '36vh'});
+				$(this).animate({width: '50%', height: '35vh'});
 				originalTwo();
-				$('.content').fadeOut();
+				$('.content, .projects-content').fadeOut();
 			}
 		});
 
@@ -340,13 +340,13 @@ $(document).ready(function(){
 				$('.project').css('display','none');
 				$('.about').css('float','right');
 				$('.projects').animate({width:'50%'});
-				$('.about').animate({height: '56vh'});
+				$('.about').animate({height: '55vh'});
 				$('.about-content').delay(500).fadeIn(1000);
 			}
 			else{
 				AboutClick=0;
 				$('.projects').animate({width:'100%'});
-				$('.about').animate({height: '36vh'});
+				$('.about').animate({height: '35vh'});
 				$('.content').fadeOut();
 			}
 		});
@@ -376,7 +376,7 @@ $(document).ready(function(){
 				$('#expand-projects').toggle();
 				$('.projects').delay(300).animate({height: '20vh'}, 300);
 				$('.github, .contact, .skills').fadeIn();
-				$('.home, .about, .skills').delay(300).animate({height: '36vh'}, 300);
+				$('.home, .about, .skills').delay(300).animate({height: '35vh'}, 300);
 				$('.project').fadeOut();
 			}
 		}
@@ -389,7 +389,7 @@ $(document).ready(function(){
 				}
 				setClick();
 				SkillsClick=1;
-				$('.skills').animate({height:'80vh'});
+				$('.skills').animate({height:'70vh'});
 				$('.github, .contact').animate({width:'66.7%'});
 				$('.home, .about, .projects').animate({height: '10vh'});
 				$('.skills-content').delay(500).fadeIn(1000);
@@ -397,7 +397,7 @@ $(document).ready(function(){
 			else{
 				SkillsClick=0;
 				$('.github, .contact').animate({width:'33.3%'});
-				$('.home, .about, .skills').animate({height: '36vh'});
+				$('.home, .about, .skills').animate({height: '35vh'});
 				$('.projects').animate({height: '20vh'});
 				$('.content').fadeOut();
 			}
@@ -421,17 +421,16 @@ $(document).ready(function(){
 					if (ContactClick==0){
 						if ((SkillsClick == 1) || (AboutClick ==1)){
 							originalTwo();					
-						};
-										
+						};				
 						setClick();
 						ContactClick=1;
 						$(this).addClass('fixed');
-						$(this).animate({width: '100%', height: '92vh'});
+						$(this).animate({width: '100%', height: '90vh'});
 						$('.home, .about, .projects, .skills, .github').toggle();
 						$('.contact-content').delay(500).fadeIn(1000);
 					} else {
 							ContactClick=0;
-							$(this).animate({width: '33.3%', height: '36vh'});
+							$(this).animate({width: '33.3%', height: '35vh'});
 							originalTwo();
 							$('.content').fadeOut();
 							setTimeout(function() {

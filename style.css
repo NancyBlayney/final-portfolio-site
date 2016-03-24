@@ -30,7 +30,7 @@ a .fa:hover{
   background-color: black;
   color: white;
   font-family: 'Josefin Sans', sans-serif;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .container:after{
@@ -110,22 +110,9 @@ a .fa:hover{
 .projects-content {
 	display: block;
 	margin: 0;
-	padding: 0;
+	padding-top: 6vh;
 	width: 100%;
 	text-align: center;
-}
-
-#expand-projects {
-	display: none;
-	width: 40%;
-  border-radius: 24px;
-  opacity: .6;
-  background:rgba(0,0,0, 0.4);
-  border: 2px solid #755097;
-  padding: 3px 3px;
-  margin: 10px;
-  text-align: center;
-  transition: all 60ms ease-in-out;
 }
 
 #expand-projects:hover, #expand-projects:active {
@@ -277,9 +264,13 @@ li{
 
 @media (min-width: 641px) {
 
+	.logo {
+		line-height: 10vh;
+	}
+
 
 	.block {
-		height: 36vh;
+		height: 35vh;
 		float: left;
 		margin: 0;
 	}
@@ -287,11 +278,6 @@ li{
 	.title {
 		top: 2%;
 	} 
-
-/*	h3 {
-		width: 300px;
-		float: right;
-	}*/
 
 	.wrapper {
 		width: 99%;
@@ -309,8 +295,6 @@ li{
 	.contact-content{
 		margin-top: 5%;
 	}
-
-
 
 	.home {
 		width: 50%;
