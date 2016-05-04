@@ -82,7 +82,7 @@ $(document).ready(function(){
 			else{
 				HomeClick=0;
 				original();
-				$('.content').fadeOut();
+				$('.content').fadeOut(100);
 				$('.about').fadeIn();
 				$('.title').removeClass('titleTwo');
 			}
@@ -113,45 +113,59 @@ $(document).ready(function(){
 		});
 
 
-		$('#expand-projects').click(function() {
-			if (ProjectsClick==0){
-				ProjectsClick=1;
-				$('.projects').animate({height:'90vh', width:'100%'});
-				$('.projects-title').addClass('fixed-title');
-				$('.github, .contact, .skills, .home, .about').fadeOut();
-				$('.project').delay(500).fadeIn(1000);
-				$('#expand-projects').html('<h3>Exit projects</h3>');
+		$('.projects').click(function(e) {
+			if ($(e.target).parent().hasClass('project')){
+				return
 			}
-			else{
-				ProjectsClick = 0;
-				$('#expand-projects').html('<h3>Click here to see more!</h3>');
-				$('.project').fadeOut();
-				$('.projects-title').removeClass('fixed-title');
-				original()
+			else {
+				if (ProjectsClick==0){
+					ProjectsClick=1;
+					$('.projects').animate({height:'90vh', width:'100%'});
+					$('.projects-title').addClass('fixed-title');
+					$('.github, .contact, .skills, .home, .about').fadeOut();
+					$('.project').delay(500).fadeIn(1000);
+				}
+				else{
+					ProjectsClick = 0;
+					$('.content').fadeOut();
+					$('.project').fadeOut();
+					$('.projects-title').removeClass('fixed-title');
+					original()
+				}
 			}
 		});
+
+
+
+		function normalDisplay(){
+			$('.project').css('height', '70px');
+			$('.primg').css('display', 'none')
+		}
 
 		$('.html-project').click(function(){
 			if (Clicker == 0){
 				Clicker = 1;
+				normalDisplay();
 				$('.html-project').animate({height:'400px'});
 				$('.html-img').css('display', 'block');
 			}
 			else{
 				Clicker = 0;
-				$('.html-project').animate({height:'90px'});
+				$('.html-project').animate({height:'70px'});
 				$('.html-img').css('display', 'none');
 			}
 		});
+
 		$('.clock-project').click(function(){
 			if (Clicker == 0){
 				Clicker = 1;
+				normalDisplay();
 				$('.clock-project').animate({height:'400px'});
 				$('.clock-img').css('display', 'block');
 			}
 			else{
 				Clicker = 0;
-				$('.clock-project').animate({height:'90px'});
+				$('.clock-project').animate({height:'70px'});
 				$('.clock-img').css('display', 'none');
 			}
 		});
@@ -159,12 +173,13 @@ $(document).ready(function(){
 		$('.modal-project').click(function(){
 			if (Clicker == 0){
 				Clicker = 1;
+				normalDisplay();
 				$('.modal-project').animate({height:'400px'});
 				$('.modal-img').css('display', 'block');
 			}
 			else{
 				Clicker = 0;
-				$('.modal-project').animate({height:'90px'});
+				$('.modal-project').animate({height:'70px'});
 				$('.modal-img').css('display', 'none');
 			}
 		});
@@ -172,12 +187,13 @@ $(document).ready(function(){
 		$('.darin-project').click(function(){
 			if (Clicker == 0){
 				Clicker = 1;
+				normalDisplay();
 				$('.darin-project').animate({height:'400px'});
 				$('.darin-img').css('display', 'block');
 			}
 			else{
 				Clicker = 0;
-				$('.darin-project').animate({height:'90px'});
+				$('.darin-project').animate({height:'70px'});
 				$('.darin-img').css('display', 'none');
 			}
 		});
@@ -185,12 +201,13 @@ $(document).ready(function(){
 		$('.rails-project').click(function(){
 			if (Clicker == 0){
 				Clicker = 1;
+				normalDisplay();
 				$('.rails-project').animate({height:'400px'});
 				$('.rails-img').css('display', 'block');
 			}
 			else{
 				Clicker = 0;
-				$('.rails-project').animate({height:'90px'});
+				$('.rails-project').animate({height:'70px'});
 				$('.rails-img').css('display', 'none');
 			}
 		});
@@ -198,12 +215,13 @@ $(document).ready(function(){
 		$('.jukebox-project').click(function(){
 			if (Clicker == 0){
 				Clicker = 1;
+				normalDisplay();
 				$('.jukebox-project').animate({height:'400px'});
 				$('.jukebox-img').css('display', 'block');
 			}
 			else{
 				Clicker = 0;
-				$('.jukebox-project').animate({height:'90px'});
+				$('.jukebox-project').animate({height:'70px'});
 				$('.jukebox-img').css('display', 'none');
 			}
 		});
@@ -302,13 +320,6 @@ $(document).ready(function(){
 
 
 
-		$('.block').mouseover(function(){
-			$(this).css({'color':'black','font-size':'1.1em'});
-		});
-
-		$('.block').mouseout(function(){
-			$(this).css({'color':'white','font-size':'1em'});
-		});
 
 
 		$('.home').click(function() {
@@ -367,6 +378,7 @@ $(document).ready(function(){
 				$('.projects').animate({height:'100%'});
 				$('.github, .contact, .skills').fadeOut();
 				$('.home, .about').animate({height: '10vh'});
+				$('.projects-content').fadeIn(100);
 				$('.project').delay(500).fadeIn(1000);
 				$('#expand-projects').html('<h3>Exit projects</h3>');
 			}
@@ -403,16 +415,6 @@ $(document).ready(function(){
 			}
 		});
 
-		// $('.exception').click(function(){
-		// 		console.log("EXCEPTION:" + $(this).attr('class'));
-		// 		flag = false;
-		// });
-
-		// $(document).keyup(function(e) {
-  //    if (e.keyCode == 27) { 
-  //    	originalTwo();
-  //   }
-		// });
 
 		$('.contact').click(function(e) {
 			if ($(e.target).parent().parent().hasClass('exception')){

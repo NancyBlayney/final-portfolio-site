@@ -30,7 +30,7 @@ a .fa:hover{
   background-color: black;
   color: white;
   font-family: 'Josefin Sans', sans-serif;
-  font-weight: 400;
+	font-style: bold;
 }
 
 .container:after{
@@ -46,6 +46,7 @@ a .fa:hover{
 	text-align: center;
 	margin-top: 20%;
 	padding: 3%;
+	font-size: 1em;
 }
 
 .block {
@@ -75,6 +76,10 @@ a .fa:hover{
 	background-size: cover;
 }
 
+.home:hover{
+	box-shadow: inset 0 0 0 1000px rgba(35,227,161, .6);
+}
+
 .home-content {
 	margin-top: 30%;
 }
@@ -86,12 +91,18 @@ a .fa:hover{
 	width: 57%;
 }
 
-.about-content {
-	margin-top: 1%;
+.about:hover{
+	box-shadow: inset 0 0 0 1000px rgba(35,197,227, .6);
 }
 
-.about p{
-	padding:2px 0;
+.about-content {
+	margin-top: 1%;
+	font-size: .9em;
+}
+
+#red{
+	color: #a30000;
+	font-weight: 600;
 }
 
 .quote {
@@ -107,19 +118,16 @@ a .fa:hover{
 	overflow: auto;
 }
 
+.projects:hover{
+	box-shadow: inset 0 0 0 1000px rgba(184,127,237, .5);
+}
+
 .projects-content {
 	display: block;
 	margin: 0;
-	padding-top: 6vh;
+	padding-top: 12vh;
 	width: 100%;
 	text-align: center;
-}
-
-#expand-projects:hover, #expand-projects:active {
-  background:rgba(147,101,189, 0.8);
-  transition: all 60ms ease;
-  border-color: #755097;
-  box-shadow: 0 0 50px rgba(255,218,185, 1);
 }
 
 .skills {
@@ -130,12 +138,21 @@ a .fa:hover{
 	width: 30%
 }
 
+.skills:hover{
+	box-shadow: inset 0 0 0 1000px rgba(251,101,101, .6);
+}
+
+
 .github {
 	background-color: #ffa500;
 	box-shadow: inset 0 0 0 1000px rgba(255,165,0, .7);
 	background: url(images/github.png); 
 	background-size: cover;
 	width: 35%;
+}
+
+.github:hover{
+	box-shadow: inset 0 0 0 1000px rgba(255,165,0, .6);
 }
 
 .fa{
@@ -154,14 +171,21 @@ a .fa:hover{
 	width: 62%;
 }
 
+.contact:hover{
+	box-shadow: inset 0 0 0 1000px rgba(255,215,0, .6);
+}
+
 .contact-content{
 	margin-top: 1%;
 }
 
-.home:hover, .about:hover, .skills:hover, .fa-github:hover, .contact:hover, #expand-projects, .github{
+.block:hover, .fa-github:hover{
 	cursor: pointer;
 }
 
+.content:hover {
+	cursor: auto;
+}
 
 
 
@@ -171,14 +195,14 @@ a .fa:hover{
 .projects-content img {
 	width: 80%;
 	margin: 0 auto;
-	margin-top: 3%;
+	padding-top: 6%;
 	display: none;
 }
 
 .project {
 	display: none;
 	width: 100%;
-	height: 90px;
+	height: 70px;
 }
 
 .project:hover{
@@ -218,6 +242,8 @@ a .fa:hover{
 	position: absolute;
 	top: 2%;
 	right: 10%;
+	height: 50px;
+	margin: 0;
 }
 
 
@@ -313,11 +339,7 @@ li{
 	.projects {
 		width: 100%;
 		height: 20vh;
-	}
-
-	#expand-projects {
-		width: 15%;
-		margin: 20px;
+		padding-top: 0;
 	}
 
 	.projects-content {
@@ -337,6 +359,8 @@ li{
 		display: inline;
 		float: left;
 		border-radius: 10%;
+		padding-top: 0;
+		margin-top: 2%;
 	}
 
 	.projects-content img:hover {
@@ -368,7 +392,10 @@ li{
 
 	.github {
 		width: 33.3%;
-		cursor: auto;
+	}
+
+	.github:hover {
+		cursor: default;
 	}
 
 	.github-content{
